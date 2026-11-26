@@ -116,20 +116,6 @@ python ollama/travel_planner_ollama.py
 
 The script prompts for a city and prints the raw result. To use another Ollama model or server, edit `LLM(model=..., base_url=...)` in `ollama/travel_planner_ollama.py`.
 
-## The RTCFR framework
-
-The prompts in this project apply **RTCFR**—**Role, Task, Context, Format, Rules**—to make an LLM request more focused and its response easier to use:
-
-| Element | Purpose | Example in this project |
-| --- | --- | --- |
-| **R — Role** | Defines the expertise or perspective the agent should adopt. | “Zero-Waste Micro-Trip Strategist” |
-| **T — Task** | States the concrete work to perform. | Select three places or stops in the requested city. |
-| **C — Context** | Describes the audience and relevant priorities. | Busy solo travellers; prefer walkability and authentic local atmosphere. |
-| **F — Format** | Specifies the shape of the response. | A numbered list of exactly three items. |
-| **R — Rules** | Adds constraints and exclusions. | Keep highlights short; avoid filler and geographically scattered stops. |
-
-In `travel_planner.py`, the agent holds the **Role** and **Context**, while the task description and `expected_output` define the **Task**, **Rules**, and **Format**. The Ollama example follows the same pattern in `build_crew()`.
-
 ## Configuration
 
 | Script | Model configuration | Credentials / service |
